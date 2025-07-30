@@ -15,7 +15,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status" />
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" />
   <img src="https://img.shields.io/badge/Version-1.0.0-orange?style=flat-square" alt="Version" />
 </p>
 
@@ -33,7 +32,6 @@
 - [🎨 Frontend Components](#-frontend-components)
 - [🌐 Deployment](#-deployment)
 - [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
 
 ---
 
@@ -91,24 +89,27 @@ The **Leave Management System** is a modern, responsive web application built us
 </p>
 
 ### Frontend Technologies
-| Technology | Purpose | Features |
-|------------|---------|----------|
-| **React.js** | UI Framework | Component-based architecture, hooks, state management |
-| **React Router** | Navigation | Client-side routing, dynamic navigation |
-| **CSS3** | Styling | Responsive design, modern layouts, animations |
-| **JavaScript ES6+** | Logic | Modern syntax, async/await, arrow functions |
+
+| Technology        | Purpose        | Features                                  |
+|-------------------|----------------|-------------------------------------------|
+| **React.js**      | UI Framework   | Component-based, hooks, state management  |
+| **React Router**  | Navigation     | Client-side routing                       |
+| **CSS3**          | Styling        | Responsive design, animations             |
+| **JavaScript ES6+** | Logic         | Modern syntax, async/await                |
 
 ### Backend Technologies
-| Technology | Purpose | Features |
-|------------|---------|----------|
-| **Node.js** | Runtime Environment | V8 engine, non-blocking I/O |
-| **Express.js** | Web Framework | RESTful APIs, middleware, routing |
-| **CORS** | Cross-Origin Support | Frontend-backend communication |
-| **In-Memory Storage** | Data Storage | Arrays for users and leave requests |
+
+| Technology        | Purpose           | Features                                 |
+|-------------------|-------------------|------------------------------------------|
+| **Node.js**       | Runtime Environment | V8 engine, non-blocking I/O             |
+| **Express.js**    | Web Framework     | RESTful APIs, middleware                 |
+| **CORS**          | Cross-Origin Support | Frontend-backend communication         |
+| **In-Memory Storage** | Data Storage | Arrays for users and leave requests      |
 
 ### Development Tools
-- **Nodemon** - Auto-restart server during development
-- **Git** - Version control and collaboration
+
+- **Nodemon** - Auto-restart during development
+- **Git** - Version control
 - **npm** - Package management
 
 ---
@@ -117,12 +118,219 @@ The **Leave Management System** is a modern, responsive web application built us
 
 ### Prerequisites
 
-Before running this project, make sure you have:
-
-- **Node.js** (v14.0.0 or higher) - [Download here](https://nodejs.org/)
-- **npm** (comes with Node.js)
-- **Git** - [Download here](https://git-scm.com/)
+- Node.js (v14 or above) - [Download here](https://nodejs.org/)
+- npm (comes with Node.js)
+- Git - [Download here](https://git-scm.com/)
 
 ### Installation Steps
 
-1. **Clone the Repository**
+```bash
+# 1. Clone the Repository
+git clone https://github.com/yourusername/leave-management-system.git
+cd leave-management-system
+
+# 2. Install Backend Dependencies
+cd backend
+npm install
+
+# 3. Install Frontend Dependencies
+cd ../frontend
+npm install
+```
+
+### Running the Application
+
+```bash
+# Start Backend Server
+cd backend
+npm run dev
+# ✅ Runs on http://localhost:5000
+
+# Start Frontend Server
+cd ../frontend
+npm start
+# ✅ Runs on http://localhost:3000
+```
+
+### Quick Test
+
+1. Visit `http://localhost:3000`
+2. Register a user
+3. Apply for leave
+4. Manage leave requests
+
+---
+
+## 📁 Project Structure
+
+```
+leave-management-system/
+├── backend/
+│   ├── routes/
+│   │   ├── users.js        # User registration & retrieval
+│   │   └── leave.js        # Leave management routes
+│   ├── server.js           # Entry point
+│   ├── package.json
+│   └── node_modules/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Home.js
+│   │   │   ├── UserForm.js
+│   │   │   ├── UsersList.js
+│   │   │   ├── LeaveForm.js
+│   │   │   └── LeavesList.js
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   └── index.js
+│   ├── package.json
+│   └── node_modules/
+├── README.md
+└── .gitignore
+```
+
+---
+
+## 🔌 API Endpoints
+
+### User Management
+
+| Method | Endpoint    | Description           |
+|--------|-------------|-----------------------|
+| POST   | `/users`    | Register new user     |
+| GET    | `/users`    | Get all users         |
+
+### Leave Management
+
+| Method | Endpoint                 | Description                 |
+|--------|--------------------------|-----------------------------|
+| POST   | `/api/leave/apply`       | Submit a leave request      |
+| GET    | `/api/leave/all`         | Retrieve all leave requests |
+| PUT    | `/api/leave/:id/status`  | Update status (approve/reject) |
+
+### Example Requests
+
+```json
+// Register User
+POST /users
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "securePassword123",
+  "department": "Developer"
+}
+
+// Apply Leave
+POST /api/leave/apply
+{
+  "employeeName": "John Doe",
+  "fromDate": "2025-08-01",
+  "toDate": "2025-08-05",
+  "reason": "Family vacation"
+}
+```
+
+---
+
+## 💡 Key Implementation Details
+
+### 🔒 Security & Validation
+
+- Backend input validation
+- Registered-user-only leave application
+- Date range checks (no past dates)
+- Sanitized inputs
+
+### 🔄 Data Flow
+
+1. User registers → stored in-memory
+2. Leave form populated from registered users
+3. Admin actions update status → UI updates in real-time
+
+### 🎯 Business Logic
+
+- Link leave requests to users
+- Status: Pending → Approved/Rejected
+- Timestamps for status updates
+- Auto days calculation
+
+---
+
+## 🎨 Frontend Components
+
+| Component       | Purpose              | Key Features                       |
+|------------------|-----------------------|------------------------------------|
+| **Home**         | Landing page          | Feature overview                   |
+| **UserForm**     | Registration          | Validation, department selection   |
+| **UsersList**    | Display all users     | Responsive table UI                |
+| **LeaveForm**    | Leave application     | Validation, dropdown selection     |
+| **LeavesList**   | Admin management      | Approve/reject, status updates     |
+
+### Styling Approach
+
+- **Modular CSS** per component
+- **Responsive Design** with breakpoints
+- **Clean UI**: forms, tables, buttons
+- **User Feedback**: loading, error/success alerts
+
+---
+
+## 🌐 Deployment
+
+### Platforms
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
+  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
+  <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" />
+</p>
+
+### Deployment Instructions
+
+**Backend (Render):**
+- Connect repo to Render
+- Build Command: `npm install`
+- Start Command: `npm start`
+
+**Frontend (Netlify):**
+- Build: `npm run build`
+- Publish Directory: `build`
+- Env: `REACT_APP_API_URL=https://your-backend.onrender.com`
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions!
+
+### Steps
+
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit: `git commit -m 'Add feature'`
+4. Push: `git push origin feature/your-feature`
+5. Open Pull Request
+
+### Guidelines
+
+- Follow code style
+- Comment complex logic
+- Test features
+- Update docs if needed
+
+---
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Built%20for-Learning-blue?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <b>🌟 If you found this project helpful, please give it a star! 🌟</b>
+</p>
+
+<p align="center">
+  Built with passion for learning and professional development<br>
+  <i>Perfect for internship assessments and portfolio showcase</i>
+</p>
