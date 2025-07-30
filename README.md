@@ -276,29 +276,6 @@ POST /api/leave/apply
 
 ---
 
-## 🌐 Deployment
-
-### Platforms
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
-  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
-  <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" />
-</p>
-
-### Deployment Instructions
-
-**Backend (Render):**
-- Connect repo to Render
-- Build Command: `npm install`
-- Start Command: `npm start`
-
-**Frontend (Netlify):**
-- Build: `npm run build`
-- Publish Directory: `build`
-- Env: `REACT_APP_API_URL=https://your-backend.onrender.com`
-
----
 
 ## 🤝 Contributing
 
@@ -332,5 +309,4 @@ We welcome contributions!
 
 <p align="center">
   Built with passion for learning and professional development<br>
-  <i>Perfect for internship assessments and portfolio showcase</i>
 </p>
