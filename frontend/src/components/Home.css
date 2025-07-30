@@ -1,0 +1,84 @@
+/* Home.css */
+.home-container {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.home-title {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.home-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.features-section {
+  margin-top: 30px;
+}
+
+.features-title {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.features-list {
+  text-align: left;
+  max-width: 300px;
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.features-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+  padding-left: 25px;
+}
+
+.features-list li:last-child {
+  border-bottom: none;
+}
+
+.features-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-container {
+    margin-top: 20px;
+    padding: 15px;
+  }
+  
+  .home-title {
+    font-size: 2rem;
+  }
+  
+  .home-description {
+    font-size: 1.1rem;
+  }
+  
+  .features-list {
+    max-width: 280px;
+  }
+}

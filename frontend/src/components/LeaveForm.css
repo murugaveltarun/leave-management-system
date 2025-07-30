@@ -1,0 +1,199 @@
+/* LeaveForm.css */
+.leave-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.leave-form-title {
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+}
+
+.form-input.error {
+  border: 2px solid #dc3545;
+}
+
+.form-input.error:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+/* Date fields row */
+.date-fields-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.date-field {
+  flex: 1;
+}
+
+/* Days calculation display */
+.days-display {
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: #e7f3ff;
+  border-radius: 4px;
+  border: 1px solid #bee5eb;
+  text-align: center;
+}
+
+.days-display strong {
+  color: #0c5460;
+  font-size: 16px;
+}
+
+/* Textarea styles */
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+}
+
+.form-textarea.error {
+  border: 2px solid #dc3545;
+}
+
+.form-textarea.error:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+/* Error message */
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  font-weight: 500;
+}
+
+/* Character counter */
+.character-counter {
+  color: #666;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.character-counter.valid {
+  color: #28a745;
+}
+
+.character-counter.invalid {
+  color: #dc3545;
+}
+
+/* Submit button */
+.submit-button {
+  background-color: #28a745;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.submit-button:active {
+  background-color: #1e7e34;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .leave-form-container {
+    max-width: 100%;
+    margin: 0 10px;
+    padding: 15px;
+  }
+  
+  .leave-form-title {
+    font-size: 1.5rem;
+  }
+  
+  .date-fields-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 10px;
+  }
+  
+  .submit-button {
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leave-form-container {
+    padding: 10px;
+  }
+  
+  .days-display {
+    padding: 10px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}

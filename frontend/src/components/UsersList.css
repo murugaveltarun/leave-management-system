@@ -1,0 +1,197 @@
+/* UsersList.css */
+.users-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.users-title {
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Empty state styles */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 20px;
+  border: 2px dashed #dee2e6;
+}
+
+.empty-state-title {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.empty-state-subtitle {
+  color: #888;
+  margin: 0;
+}
+
+/* Users table section */
+.users-table-section {
+  margin-top: 20px;
+}
+
+.user-count {
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 16px;
+}
+
+.user-count strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Table styles */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header {
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table-header-cell {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-header-cell.center {
+  text-align: center;
+}
+
+.table-row {
+  transition: background-color 0.2s ease;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.table-row:nth-child(odd) {
+  background-color: white;
+}
+
+.table-row:hover {
+  background-color: #e3f2fd !important;
+}
+
+.table-cell {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+  vertical-align: middle;
+}
+
+.table-cell.center {
+  text-align: center;
+}
+
+/* Department badge styles */
+.department-badge {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dept-developer {
+  background-color: #007bff;
+}
+
+.dept-designing {
+  background-color: #28a745;
+}
+
+.dept-sales {
+  background-color: #ffc107;
+  color: #333 !important;
+}
+
+.dept-hr {
+  background-color: #dc3545;
+}
+
+.dept-default {
+  background-color: #6c757d;
+}
+
+/* Registration date styles */
+.registration-date {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .users-container {
+    max-width: 100%;
+    margin: 0 10px;
+    padding: 15px;
+  }
+  
+  .users-title {
+    font-size: 1.5rem;
+  }
+  
+  .empty-state {
+    padding: 30px 20px;
+  }
+  
+  .table-header-cell,
+  .table-cell {
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  .department-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  
+  .registration-date {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .users-table {
+    font-size: 12px;
+  }
+  
+  .table-header-cell,
+  .table-cell {
+    padding: 6px;
+  }
+  
+  .department-badge {
+    display: block;
+    margin-top: 2px;
+  }
+}
