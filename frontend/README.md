@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# 🏢 Leave Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB (Concept)" />
+</p>
 
-## Available Scripts
+<p align="center">
+  <b>A comprehensive full-stack MERN application for employee leave management</b>
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/badge/Version-1.0.0-orange?style=flat-square" alt="Version" />
+</p>
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📋 Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [🎯 Project Overview](#-project-overview)
+- [✨ Features](#-features)
+- [🛠️ Technologies Used](#️-technologies-used)
+- [🚀 Getting Started](#-getting-started)
+- [📁 Project Structure](#-project-structure)
+- [🔌 API Endpoints](#-api-endpoints)
+- [💡 Key Implementation Details](#-key-implementation-details)
+- [🎨 Frontend Components](#-frontend-components)
+- [🌐 Deployment](#-deployment)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎯 Project Overview
 
-### `npm run build`
+The **Leave Management System** is a modern, responsive web application built using the MERN stack (excluding database integration as per requirements). This project demonstrates professional full-stack development skills and implements real-world business logic for managing employee leave requests.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Why This Project Matters
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Professional Architecture**: Clean separation of frontend and backend with proper API design
+- **Real-World Business Logic**: Only registered employees can apply for leave, enforcing proper workflow
+- **Modern UI/UX**: Responsive design with professional styling and user feedback
+- **Complete CRUD Operations**: Full create, read, update functionality with proper validation
+- **Industry Standards**: Following best practices for React.js and Express.js development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ✨ Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔐 User Management
+- **Secure Registration**: Input validation with department assignment
+- **Professional Form Design**: Clean, responsive registration forms
+- **Department Validation**: Only allows specific departments (Developer, Designing, Sales & Marketing, HR)
+- **Duplicate Prevention**: Prevents registration with existing email addresses
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 📝 Leave Application System
+- **Restricted Access**: Only registered users can apply for leave
+- **Smart Form Validation**: 
+  - Date validation (prevents past dates)
+  - Minimum reason length requirement
+  - Automatic days calculation
+- **User Dropdown**: Select from registered employees (no manual typing)
+- **Real-time Feedback**: Loading states and success/error messages
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 👨‍💼 Administrative Features
+- **Dashboard Overview**: Statistics showing pending, approved, and rejected requests
+- **Request Management**: Approve or reject leave requests with one click
+- **Status Tracking**: Automatic timestamps for all status changes
+- **Professional Table Design**: Clean, sortable display of all requests
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 🎨 User Experience
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+- **Loading States**: Professional loading indicators during API calls
+- **Error Handling**: Comprehensive error messages and user guidance
+- **Intuitive Navigation**: Clean routing between different sections
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🛠️ Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-React.js-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/Backend-Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
+  <img src="https://img.shields.io/badge/Runtime-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
+</p>
 
-### Code Splitting
+### Frontend Technologies
+| Technology | Purpose | Features |
+|------------|---------|----------|
+| **React.js** | UI Framework | Component-based architecture, hooks, state management |
+| **React Router** | Navigation | Client-side routing, dynamic navigation |
+| **CSS3** | Styling | Responsive design, modern layouts, animations |
+| **JavaScript ES6+** | Logic | Modern syntax, async/await, arrow functions |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Backend Technologies
+| Technology | Purpose | Features |
+|------------|---------|----------|
+| **Node.js** | Runtime Environment | V8 engine, non-blocking I/O |
+| **Express.js** | Web Framework | RESTful APIs, middleware, routing |
+| **CORS** | Cross-Origin Support | Frontend-backend communication |
+| **In-Memory Storage** | Data Storage | Arrays for users and leave requests |
 
-### Analyzing the Bundle Size
+### Development Tools
+- **Nodemon** - Auto-restart server during development
+- **Git** - Version control and collaboration
+- **npm** - Package management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🚀 Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Prerequisites
 
-### Advanced Configuration
+Before running this project, make sure you have:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Node.js** (v14.0.0 or higher) - [Download here](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Git** - [Download here](https://git-scm.com/)
 
-### Deployment
+### Installation Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Clone the Repository**
